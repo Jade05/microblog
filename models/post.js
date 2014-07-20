@@ -11,7 +11,7 @@ function Post(username, post, time) {
 module.exports = Post;
 Post.prototype.save = function save(callback) { 
 // 存入Mongodb 的文档
-    var post = { 
+    var post = {     //可以认为这就是在数据中存储的表的形式
         user: this.user, 
         post: this.post, 
         time: this.time, 
@@ -36,6 +36,7 @@ Post.prototype.save = function save(callback) {
         }); 
     }); 
 };
+
 Post.get = function get(username, callback) { 
     mongodb.open(function(err, db) { 
         if(err) { 

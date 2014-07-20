@@ -51,7 +51,7 @@ module.exports = function(app) {
             newUser.save(function(err) { 
                 if(err) { 
                     req.flash('error', err); 
-                    returnres.redirect('/reg'); 
+                    return res.redirect('/reg'); 
                 } 
                 req.session.user = newUser; 
                 req.flash('success', '注册成功'); 
